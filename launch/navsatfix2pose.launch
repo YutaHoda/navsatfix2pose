@@ -5,7 +5,7 @@
   <include file="$(find navsatfix2pose)/launch/setup_gnssposetf.launch">
   </include>
 
-  <arg name="sub_gnss_topic_name" default="/f9p/fix"/>
+  <arg name="sub_gnss_topic_name" default="/fix"/>
   <arg name="pub_rtk_topic_name" default="/rtk_base_link"/>
   <arg name="pub_rtk_covariance_topic_name" default="/sensing/gnss/pose_with_covariance"/>
   <arg name="pub_rtk_fix_topic_name" default="/fixed/pose"/>
