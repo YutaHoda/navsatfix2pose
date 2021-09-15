@@ -1,0 +1,29 @@
+<launch>
+
+
+  <arg name="_gps_x" default="0.0"/>
+  <arg name="_gps_y" default="0.0"/>
+  <arg name="_gps_z" default="1.6"/>
+  <arg name="_gps_yaw" default="0.0"/>
+  <arg name="_gps_pitch" default="0.0"/>
+  <arg name="_gps_roll" default="0.0"/>
+  <arg name="_gps_child_frame_id" default="gnss_NavSatFix"/>
+  <arg name="_gps_frame_id" default="rtk_base_link"/>
+  <arg name="_gps_period_in_ms" default="5"/>
+  
+  <param name="gps_x" value="$(arg _gps_x)"/>
+  <param name="gps_y" value="$(arg _gps_y)"/>
+  <param name="gps_z" value="$(arg _gps_z)"/>
+  <param name="gps_yaw" value="$(arg _gps_yaw)"/>
+  <param name="gps_pitch" value="$(arg _gps_pitch)"/>
+  <param name="gps_roll" value="$(arg _gps_roll)"/>
+  <param name="_gps_child_frame_id" value="$(arg _gps_child_frame_id)"/>
+  <param name="_gps_frame_id" value="$(arg _gps_frame_id)"/>
+  <param name="_gps_period_in_ms" value="$(arg _gps_period_in_ms)"/>
+
+
+  <!-- <node pkg="tf" type="static_transform_publisher" name="gnss_pose_to_localizer" args="-1.38 0.471 -1.03 0.0 0.0 0.0 gnss_NavSatFix rtk_base_link 5"/> -->
+
+  <node pkg="tf" type="static_transform_publisher" name="baselink_gps" args="$(arg _gps_x) $(arg _gps_y) $(arg _gps_z) $(arg _gps_yaw) $(arg _gps_pitch) $(arg _gps_roll) $(arg _gps_child_frame_id) $(arg _gps_frame_id) $(arg _gps_period_in_ms)" />
+
+</launch>
