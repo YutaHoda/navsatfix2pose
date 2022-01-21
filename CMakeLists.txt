@@ -8,7 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   tf
-  coordinate
+  eagleye_coordinate
 )
 
 catkin_package(
@@ -18,7 +18,7 @@ catkin_package(
   roscpp
   rospy
   std_msgs
-  coordinate
+  eagleye_coordinate
 )
 
 include_directories(
