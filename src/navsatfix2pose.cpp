@@ -68,9 +68,14 @@ void NavSatFix_callback(const sensor_msgs::NavSatFix::ConstPtr& msg)
     llh[2] = convert_height.convert2ellipsoid();
   }
 
-
-
- ll2xy(plane,llh,xyz);
+  if (tf_num == 1)
+  {
+    ll2xy(plane,llh,xyz);
+  }
+  else if (tf_num == 2)
+  {
+    ll2xy_mgrs(llh,xyz);
+  }
 
   double timeout = 10.0;
   if (fabs(orientation_stamp_.toSec() - msg->header.stamp.toSec()) > timeout)
